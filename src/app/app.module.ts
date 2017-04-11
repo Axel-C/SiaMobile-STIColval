@@ -4,7 +4,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AddPage } from '../pages/add/add';
 import { Login } from '../pages/login/login';
-
+import { TabsPage } from '../pages/tabs/tabs';
+import { TicketPage } from '../pages/ticket/ticket';
+import { OptionPage } from '../pages/option/option';
 import { HttpModule }      from '@angular/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,6 +17,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     AddPage,
+    TabsPage ,
+    OptionPage ,
+    TicketPage ,
     Login
   ],
   imports: [
@@ -25,6 +30,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     AddPage,
+    TabsPage ,
+    OptionPage ,
+    TicketPage ,
     Login
   ],
   providers: [
