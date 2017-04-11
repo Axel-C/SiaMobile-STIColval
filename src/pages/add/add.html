@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Nouveau Ticket
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+  <ion-item>
+    <ion-label>Type</ion-label>
+    <ion-select name="type">
+      <ion-option value="incident" selected="true" >Incident</ion-option>
+      <ion-option value="demande">Demande</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Categorie</ion-label>
+    <ion-select name="Categorie" >
+      <ion-option value="incident" selected="true" >Categorie 1</ion-option>
+      <ion-option value="demande">Categorie 2</ion-option>
+      <ion-option value="demande">Categorie 3</ion-option>
+      <ion-option value="demande">Categorie 4</ion-option>
+      <ion-option value="demande">Categorie 5</ion-option>
+      <ion-option value="demande">Categorie 6</ion-option>
+      <ion-option value="demande">Categorie 7</ion-option>
+      <ion-option value="demande">Categorie 8</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Urgence</ion-label>
+    <ion-select name="urgence">
+      
+      <ion-option value="th">Très haute</ion-option>
+      <ion-option value="h">Haute</ion-option>
+      <ion-option value="m" selected="true" >Moyenne</ion-option>
+      <ion-option value="b">Basse</ion-option>
+      <ion-option value="tb">Très Basse</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+  <ion-label>Suivie par courriel</ion-label>
+  <ion-checkbox color="blue" checked="true"></ion-checkbox>
+</ion-item>
+ <ion-item>
+    <ion-label floating>Courriel</ion-label>
+    <ion-input type="text" value=""></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Lieu</ion-label>
+    <ion-select name="urgence">
+      
+      <ion-option value="th">Aile A</ion-option>
+      <ion-option value="h">Aile B</ion-option>
+      <ion-option value="m" selected="true" >Aile C</ion-option>
+      <ion-option value="b">Aile D</ion-option>
+      <ion-option value="tb">Aile E</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Titre</ion-label>
+    <ion-input type="text" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Description</ion-label>
+    <ion-input type="text" value=""></ion-input>
+  </ion-item>
+</ion-list>
+
+ <button ion-button full large>Soumettre la demande</button>
+
+</ion-content>
