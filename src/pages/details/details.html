@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="orange">
+    <ion-title>
+      {{item.title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+    <ion-card>
+       
+        <ion-card-content>
+            <ion-card-title>
+                {{item.title}}
+            </ion-card-title>
+            {{item.selftext}}
+           <ion-list>
+               <ion-item>
+                   <ion-icon name="person" item-left></ion-icon>
+                   Autheur
+                   <ion-note item-right>
+                       Axel Coeuret
+                   </ion-note>
+               </ion-item>
+
+               <ion-item>
+                   <ion-icon name="pin" item-left></ion-icon>
+                   Lieu
+                   <ion-note item-right>
+                       A206
+                   </ion-note>
+               </ion-item>
+
+               
+
+               <ion-item>
+                   <ion-icon name="time" item-left></ion-icon>
+                   Date et Heure
+                   <ion-note item-right>
+                       Aujourd'hui à 16:00
+                   </ion-note>
+               </ion-item>
+
+              <ion-item>
+                   <ion-icon name="thermometer" item-left></ion-icon>
+                   Urgence
+                   <ion-note item-right>
+                       Basse
+                   </ion-note>
+               </ion-item>
+
+           </ion-list>
+           <a ion-button block target="_blank" href="#" color="blouge">Terminer</a>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

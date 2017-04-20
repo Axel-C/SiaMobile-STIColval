@@ -1,65 +1,51 @@
 <ion-header>
-  <ion-navbar color="primary">
-    
+  <ion-navbar style="text-align: center" color="light">
+      <img alt="Company Logo2" style="margin-left : 34px ;text-align : center"  height="40" src="assets/images/topLogo.png">
     <ion-title>
-      STI Colval
+     
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only [navPush]="addPage">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content >
 <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   
-	<ion-card>
+	
 
-		 <ion-card-header>
-   <strong> Titre du ticket </strong>
-  </ion-card-header>
 
-<ion-card-content>
-    Description du ticket 
-  </ion-card-content>
 
-<ion-row>
+
+<ion-card *ngFor="let item of items" (click)="viewItem(item.data)" style="padding: 6px ;  " >
+    <ion-card-header style="white-space : normal">
+      <h2 style="margin-left: -16px"><strong>{{item.data.title}}</strong> </h2>
+
+    </ion-card-header>
+   <p style="  text-overflow: ellipsis;
+   max-height: 100px;
+    overflow: hidden;
+    white-space: normal;"> {{item.data.selftext}}</p>
+    <ion-row>
     <ion-col>
-      <button ion-button icon-left clear small>
+      <button ion-button icon-left clear small color="orange"  >
         <ion-icon name="md-checkmark-circle"></ion-icon>
         <div> Terminé </div>
-      </button>
+      </button >
     </ion-col>
     
     
   </ion-row>
 </ion-card>
 
-
-<ion-card>
-
-		 <ion-card-header>
-   <strong> Titre du ticket 2 </strong>
-  </ion-card-header>
-
-<ion-card-content>
-    Description du ticket 2
-  </ion-card-content>
-</ion-card>
-
-<ion-card *ngFor="let items of items">
-    <ion-card-header>
-      <h2> {{items.data.title}} </h2>
-    </ion-card-header>
-</ion-card>
-
- <ion-fab right bottom>
+ <!--<ion-fab right bottom>
     <button ion-fab [navPush]="addPage" ><ion-icon name="add" ></ion-icon></button>
-  </ion-fab>
+  </ion-fab>-->
 
 
 

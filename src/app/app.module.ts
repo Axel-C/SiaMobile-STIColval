@@ -7,6 +7,7 @@ import { Login } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TicketPage } from '../pages/ticket/ticket';
 import { OptionPage } from '../pages/option/option';
+import { DetailsPage } from '../pages/details/details';
 import { HttpModule }      from '@angular/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -19,6 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AddPage,
     TabsPage ,
     OptionPage ,
+    DetailsPage ,
     TicketPage ,
     Login
   ],
@@ -32,6 +34,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AddPage,
     TabsPage ,
     OptionPage ,
+    DetailsPage ,
     TicketPage ,
     Login
   ],

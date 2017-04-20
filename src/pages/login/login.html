@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="orange"> 
     
     <ion-title>
       Connexion
@@ -7,21 +7,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content style="text-align : center" padding>
+
+  <img src='assets/images/logo.png'>
 <ion-list>
  
  <ion-item>
     <ion-label floating>Courriel</ion-label>
-    <ion-input type="text" value=""></ion-input>
+    <ion-input id="mail" type="text"  name="mail" value="" [(ngModel)] = "mail"></ion-input>
   </ion-item>
 
 
   <ion-item>
     <ion-label floating>Mots de passe</ion-label>
-    <ion-input type="password" value=""></ion-input>
+    <ion-input name="password" type="password" value="" [(ngModel)] = "password" ></ion-input>
   </ion-item>
 </ion-list>
 
- <button ion-button full large (click)="login()" [navPush]="homePage">Se connecter</button>
+ <button ion-button full large (click)="login()" [navPush]="homePage" color='blouge' >Se connecter</button>
 
 </ion-content>

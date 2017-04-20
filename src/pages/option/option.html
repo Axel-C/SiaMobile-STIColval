@@ -5,14 +5,33 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>option</ion-title>
+  
+ <ion-navbar style="text-align: center" color="light">
+      <img alt="Company Logo2"  height="40" src="assets/images/topLogo.png">
+    <ion-title>
+     
+    </ion-title>
+   
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-Des options + d'autre chose
+    <ion-list>
+      <ion-item>
+    <ion-icon name="notifications-outline" item-left></ion-icon>
+     <ion-label> Notification</ion-label>
+      
+    <ion-toggle checked='true' color='orange' item-right></ion-toggle>
+  </ion-item>
+  <ion-item (click)="login()">
+    <ion-icon name="exit" item-left></ion-icon>
+      Se déconnecter
+   
+  </ion-item>
+
+
+</ion-list>
+
 </ion-content>

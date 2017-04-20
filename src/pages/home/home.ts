@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AddPage } from '../add/add';
 import {RedditService} from '../../app/services/reddit.service';
-
+import {DetailsPage } from '../details/details'
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -16,8 +16,9 @@ export class HomePage {
 
  doRefresh(refresher) {
     console.log('Begin async operation', refresher);
-
+    
     setTimeout(() => {
+      this.getPosts('nosleep' , 10);
       console.log('Async operation has ended');
       refresher.complete();
     }, 2000);
@@ -36,13 +37,23 @@ export class HomePage {
   }
 
   ngOnInit(){
-    this.getPosts('aww' , 5 );
+    this.getPosts('tifu' , 5 );
     
   }
 
   getPosts(category , limit){
    this.redditService.getPosts(category, limit).subscribe(response => {
       this.items = response.data.children;
+      console.log("Reponse : " + response)
+      if(response.err)
+      alert(response.err);
+    });
+  }
+
+
+  viewItem(item){
+    this.navCtrl.push(DetailsPage, {
+      item:item
     });
   }
 

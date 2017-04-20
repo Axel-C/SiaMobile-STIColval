@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Login } from '../login/login';
+import { App } from "ionic-angular";
 
 /*
   Generated class for the Option page.
@@ -12,11 +14,17 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'option.html'
 })
 export class OptionPage {
+  loginPage = Login ;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(private app : App , public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OptionPage');
+  }
+
+  login(){
+    this.app.getRootNav().setRoot(Login);
+    
   }
 
 }
