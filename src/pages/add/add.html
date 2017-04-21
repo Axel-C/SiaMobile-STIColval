@@ -19,14 +19,9 @@
   <ion-item>
     <ion-label>Categorie</ion-label>
     <ion-select name="Categorie" >
-      <ion-option value="incident" selected="true" >Categorie 1</ion-option>
-      <ion-option value="demande">Categorie 2</ion-option>
-      <ion-option value="demande">Categorie 3</ion-option>
-      <ion-option value="demande">Categorie 4</ion-option>
-      <ion-option value="demande">Categorie 5</ion-option>
-      <ion-option value="demande">Categorie 6</ion-option>
-      <ion-option value="demande">Categorie 7</ion-option>
-      <ion-option value="demande">Categorie 8</ion-option>
+     
+      <ion-option *ngFor="let category of categories" value='{{category.id}}' >{{category.completename}}</ion-option>
+     
     </ion-select>
   </ion-item>
 
@@ -54,13 +49,10 @@
 
   <ion-item>
     <ion-label>Lieu</ion-label>
-    <ion-select name="urgence">
+    <ion-select name="lieu">
       
-      <ion-option value="th">Aile A</ion-option>
-      <ion-option value="h">Aile B</ion-option>
-      <ion-option value="m" selected="true" >Aile C</ion-option>
-      <ion-option value="b">Aile D</ion-option>
-      <ion-option value="tb">Aile E</ion-option>
+      <ion-option *ngFor="let location of locations" value="th">{{location.displayname}}</ion-option>
+      
     </ion-select>
   </ion-item>
 

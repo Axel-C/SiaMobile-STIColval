@@ -32,7 +32,7 @@ export class TicketPage {
  }
 
  ngOnInit(){
-    this.getPosts('jokes' , 5 );
+    this.getPosts('worldnews' , 5 );
     
   }
 

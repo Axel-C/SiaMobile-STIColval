@@ -29367,6 +29367,18 @@ ion-navbar.toolbar {
   }
 }
 
+.alert-wrapper {
+  max-width: 90% !important;
+}
+
+.alert-radio-label {
+  white-space: normal !important;
+}
+
+page-add .alert-wrapper {
+  max-width: 90%;
+}
+
 page-login img {
   max-width: auto;
   height: 10%;

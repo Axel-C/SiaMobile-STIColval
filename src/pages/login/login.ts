@@ -19,25 +19,25 @@ password ;
     
   }
  login(){
-      console.log(this.mail);
-      console.log(this.password);
-      if(this.mail != undefined && this.password != undefined){
+    //   console.log(this.mail);
+    //   console.log(this.password);
+    //   if(this.mail != undefined && this.password != undefined){
 
-          this.navCtrl.setRoot(TabsPage);
+    //       this.navCtrl.setRoot(TabsPage);
 
-      }else{
-        // alert('Invalide');
-    let alert = this.alertCtrl.create({
-      title: 'Identifiants incorects',
-      subTitle: 'Votre adresse courriel et/ou votre mot de passe n\'est pas valide',
-      buttons: ['OK']
-    });
-    alert.present();
+    //   }else{
+    //     // alert('Invalide');
+    // let alert = this.alertCtrl.create({
+    //   title: 'Identifiants incorects',
+    //   subTitle: 'Votre adresse courriel et/ou votre mot de passe n\'est pas valide',
+    //   buttons: ['OK']
+    // });
+    // alert.present();
   
-      }
-     // var login = document.getElementById('login').value ;
+    //   }
+    //  // var login = document.getElementById('login').value ;
       
-      
+     this.navCtrl.setRoot(TabsPage); 
       
   };
   

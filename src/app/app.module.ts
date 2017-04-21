@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { TicketPage } from '../pages/ticket/ticket';
 import { OptionPage } from '../pages/option/option';
 import { DetailsPage } from '../pages/details/details';
+import { GroupPage } from '../pages/group/group';
 import { HttpModule }      from '@angular/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,6 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     OptionPage ,
     DetailsPage ,
     TicketPage ,
+    GroupPage ,
     Login
   ],
   imports: [
@@ -36,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     OptionPage ,
     DetailsPage ,
     TicketPage ,
+    GroupPage ,
     Login
   ],
   providers: [

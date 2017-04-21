@@ -44,7 +44,7 @@ export class HomePage {
   getPosts(category , limit){
    this.redditService.getPosts(category, limit).subscribe(response => {
       this.items = response.data.children;
-      console.log("Reponse : " + response)
+      
       if(response.err)
       alert(response.err);
     });

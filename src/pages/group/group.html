@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar style="text-align: center" color="light">
+      <img alt="Company Logo2" style="text-align : center"  height="40" src="assets/images/topLogo.png">
+    <ion-title>
+     
+    </ion-title>
+    <ion-buttons end>
+      
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  les groupes sont ici 
+	
+
+
+
+
+<ion-card *ngFor="let item of items" (click)="viewItem(item.data)" style="padding: 6px ;  " >
+    <ion-card-header style="white-space : normal">
+      <h2 style="margin-left: -16px"><strong>{{item.data.title}}</strong> </h2>
+
+    </ion-card-header>
+   <p style="  text-overflow: ellipsis;
+   max-height: 100px;
+    overflow: hidden;
+    white-space: normal;"> {{item.data.selftext}}</p>
+    <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small color="orange"  >
+        <ion-icon name="md-checkmark-circle"></ion-icon>
+        <div> Terminé </div>
+      </button >
+    </ion-col>
+    
+    
+  </ion-row>
+</ion-card>
+
+ <!--<ion-fab right bottom>
+    <button ion-fab [navPush]="addPage" ><ion-icon name="add" ></ion-icon></button>
+  </ion-fab>-->
+
+
+
+</ion-content>

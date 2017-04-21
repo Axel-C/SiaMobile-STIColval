@@ -1,0 +1,34 @@
+import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+
+/*
+  Generated class for the Group page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+*/
+@Component({
+  selector: 'page-group',
+  templateUrl: 'group.html'
+})
+export class GroupPage {
+  items : any ;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    
+    setTimeout(() => {
+      // this.getPosts('nosleep' , 10);
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+ }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad GroupPage');
+  }
+
+}

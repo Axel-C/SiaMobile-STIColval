@@ -11,10 +11,10 @@ export class CategoryService{
 
     constructor(http:Http){
         this.http = http;
-        this.baseUrl = 'URL';
+        this.baseUrl = 'http://siaapi.azurewebsites.net/api/ticketcategories'
     }
 
-    getPosts(){
+    getCategories(){
         return this.http.get(this.baseUrl)
             .map(res => res.json());
 
