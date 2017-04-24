@@ -37,7 +37,7 @@ export class HomePage {
   }
 
   ngOnInit(){
-    this.getPosts('tifu' , 5 );
+    this.getPosts('nosleep' , 5 );
     
   }
 

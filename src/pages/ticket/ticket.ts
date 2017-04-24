@@ -25,7 +25,7 @@ export class TicketPage {
     console.log('Begin async operation', refresher);
     
     setTimeout(() => {
-      this.getPosts('showerthoughts' , 50);
+      this.getPosts('worldnews' , 50);
       console.log('Async operation has ended');
       refresher.complete();
     }, 2000);
