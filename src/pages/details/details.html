@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="orange">
     <ion-title>
-      {{item.title}}
+      {{ticket.name}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,15 +11,15 @@
        
         <ion-card-content>
             <ion-card-title>
-                {{item.title}}
+                {{ticket.name}}
             </ion-card-title>
-            {{item.selftext}}
+                    {{ticket.content}}
            <ion-list>
                <ion-item>
                    <ion-icon name="person" item-left></ion-icon>
                    Autheur
                    <ion-note item-right>
-                       Axel Coeuret
+                       {{ticket.author}}
                    </ion-note>
                </ion-item>
 
@@ -27,7 +27,7 @@
                    <ion-icon name="pin" item-left></ion-icon>
                    Lieu
                    <ion-note item-right>
-                       A206
+                        {{ticket.location}}   
                    </ion-note>
                </ion-item>
 
@@ -37,7 +37,7 @@
                    <ion-icon name="time" item-left></ion-icon>
                    Date et Heure
                    <ion-note item-right>
-                       Aujourd'hui à 16:00
+                       {{ticket.date}}
                    </ion-note>
                </ion-item>
 
@@ -45,7 +45,7 @@
                    <ion-icon name="thermometer" item-left></ion-icon>
                    Urgence
                    <ion-note item-right>
-                       Basse
+                       {{ticket.priority_text}}
                    </ion-note>
                </ion-item>
 
@@ -53,7 +53,7 @@
                    <ion-icon name="paper" item-left></ion-icon>
                    État : 
                    <ion-note item-right>
-                       En cours 
+                       {{ticket.status_text}}
                    </ion-note>
                </ion-item>
 

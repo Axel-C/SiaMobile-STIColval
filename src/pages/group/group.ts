@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {TicketsService} from '../../app/services/tickets.service';
+import {DetailsPage } from '../details/details'
+import { NavController } from 'ionic-angular';
 
 /*
   Generated class for the Group page.
@@ -12,9 +14,14 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'group.html'
 })
 export class GroupPage {
-  items : any ;
+  tickets : any ;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController , private ticketsService : TicketsService) {}
+
+ngOnInit() {
+    this.getTickets(10 , 0);
+  
+}
 
 
   doRefresh(refresher) {
@@ -29,6 +36,22 @@ export class GroupPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GroupPage');
+  }
+
+  getTickets(limit , offset){
+    console.log('Récupération des tickets');
+    this.ticketsService.getMyTickets(limit , offset).subscribe(response => {
+      this.tickets = response ;
+      console.log(response);
+      console.log(this.tickets);
+    })
+    
+  }
+
+  viewItem(ticket){
+    this.navCtrl.push(DetailsPage, {
+      ticket:ticket
+    });
   }
 
 }

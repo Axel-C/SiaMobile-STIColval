@@ -28,7 +28,7 @@ export class HomePage {
    console.log('test');
     this.navCtrl.push('addPage');
   }
-
+ 
 
 
 
@@ -44,6 +44,7 @@ export class HomePage {
   getPosts(category , limit){
    this.redditService.getPosts(category, limit).subscribe(response => {
       this.items = response.data.children;
+      
       
       if(response.err)
       alert(response.err);
