@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/res/merged/debug/xml/config.xml",
+        "source": "/Users/axelcoeuret/Desktop/STIColval/platforms/android/res/xml/config.xml"
+    },
+    {
         "merged": "/home/axel/Desktop/STI/STIcolval/platforms/android/build/intermediates/res/merged/debug/xml/config.xml",
         "source": "/home/axel/Desktop/STI/STIcolval/platforms/android/res/xml/config.xml"
     }

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
-
+import { NavController , Loading } from 'ionic-angular';
+import { AlertController, LoadingController } from 'ionic-angular';
+import { LoginService} from '../../app/services/login.service';
 import { TabsPage } from '../tabs/tabs';
 
 @Component({
@@ -12,33 +12,39 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class Login {
 TabsPage = TabsPage ;
-mail ;
+id = "08005";
+SiaId :any ;
 password ;
+
  
-  constructor(public navCtrl: NavController , public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController , public alertCtrl: AlertController  , private loginService:LoginService , public loadingController: LoadingController) {
     
   }
- login(){
-    //   console.log(this.mail);
-    //   console.log(this.password);
-    //   if(this.mail != undefined && this.password != undefined){
 
-    //       this.navCtrl.setRoot(TabsPage);
-
-    //   }else{
-    //     // alert('Invalide');
-    // let alert = this.alertCtrl.create({
-    //   title: 'Identifiants incorects',
-    //   subTitle: 'Votre adresse courriel et/ou votre mot de passe n\'est pas valide',
-    //   buttons: ['OK']
-    // });
-    // alert.present();
   
-    //   }
-    //  // var login = document.getElementById('login').value ;
+ login(){
+   let loader = this.loadingController.create({
+      content: "Authentification en cours ..." 
+    });   
+    loader.present();
+    this.loginService.getSiaId(this.id).subscribe(response => {
       
-     this.navCtrl.setRoot(TabsPage); 
+      this.loginService.login = response.id ;
+     this.loginService.password = this.password ; 
+     this.navCtrl.setRoot(TabsPage);
+     loader.dismiss();
+    } ,
+    err => {
+      alert("Erreur : Impossible de se connecter \n Veuillez réessayer plus tard ")
+      loader.dismiss();
+    }
+    );
+    console.log("Sia" + this.SiaId);
+     
+     
       
   };
+
+  
   
 }

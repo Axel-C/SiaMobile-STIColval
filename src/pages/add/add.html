@@ -10,15 +10,15 @@
 <ion-list>
   <ion-item>
     <ion-label>Type</ion-label>
-    <ion-select name="type">
-      <ion-option value="incident" selected="true" >Incident</ion-option>
-      <ion-option value="demande">Demande</ion-option>
+    <ion-select name="type" [(ngModel)] = "type">
+      <ion-option value="1" selected="true">Incident</ion-option>
+      <ion-option value="2"> Demande</ion-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label>Categorie</ion-label>
-    <ion-select name="Categorie" >
+    <ion-select name="Categorie"  [(ngModel)] = "category">
      
       <ion-option *ngFor="let category of categories" value='{{category.id}}' >{{category.completename}}</ion-option>
      
@@ -27,29 +27,22 @@
 
   <ion-item>
     <ion-label>Urgence</ion-label>
-    <ion-select name="urgence">
+    <ion-select name="urgence" [(ngModel)] = "emergency">
       
-      <ion-option value="th">Très haute</ion-option>
-      <ion-option value="h">Haute</ion-option>
-      <ion-option value="m" selected="true" >Moyenne</ion-option>
-      <ion-option value="b">Basse</ion-option>
-      <ion-option value="tb">Très Basse</ion-option>
+      <ion-option value="5">Très haute</ion-option>
+      <ion-option value="4">Haute</ion-option>
+      <ion-option value="3" selected="true" >Moyenne</ion-option>
+      <ion-option value="2">Basse</ion-option>
+      <ion-option value="1">Très Basse</ion-option>
     </ion-select>
   </ion-item>
 
-  <ion-item>
-  <ion-label>Suivie par courriel</ion-label>
-  <ion-checkbox color="blue" checked="true" color="blouge"></ion-checkbox>
-</ion-item>
- <ion-item>
-    <ion-label floating>Courriel</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
+ 
 
 
   <ion-item>
     <ion-label>Lieu</ion-label>
-    <ion-select name="lieu">
+    <ion-select name="lieu" [(ngModel)] = "place">
       
       <ion-option *ngFor="let location of locations" value="{{location.id}}">{{location.displayname}}</ion-option>
       
@@ -57,16 +50,16 @@
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Titre</ion-label>
-    <ion-input type="text" value=""></ion-input>
+    <ion-label floating >Titre</ion-label>
+    <ion-input type="text" value="" [(ngModel)] = "title"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Description</ion-label>
-    <ion-input type="text" value=""></ion-input>
+    <ion-label floating >Description</ion-label>
+    <ion-input type="text" value="" [(ngModel)] = "content"></ion-input>
   </ion-item>
 </ion-list>
 
- <button ion-button full large color="blouge">Soumettre la demande</button>
+ <button ion-button full large color="blouge" (click)="submit()" >Soumettre la demande</button>
 
 </ion-content>

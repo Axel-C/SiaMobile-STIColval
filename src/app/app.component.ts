@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {RedditService} from './services/reddit.service'
+
 import {TicketsService} from './services/tickets.service'
 import {CategoryService} from './services/category.service'
 import {PlacesService} from './services/places.service'
+import {LoginService} from './services/login.service'
 
 
 import { Login } from '../pages/login/login';
@@ -13,7 +14,7 @@ import { Login } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html' ,
-  providers: [RedditService , CategoryService , PlacesService , TicketsService] 
+  providers: [ CategoryService , PlacesService , TicketsService , LoginService] 
 })
 export class MyApp {
   rootPage:any = Login;

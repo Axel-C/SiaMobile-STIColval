@@ -3,21 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="/home/axel/Desktop/STI/STIcolval/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/release/jars/classes.jar"
+        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.2"
-        sha1="30d9feddb859d8741323ada01317fd4a733ff6e3">
-        <dex dex="/home/axel/Desktop/STI/STIcolval/platforms/android/build/intermediates/pre-dexed/release/CordovaLib-unspecified-release_415fbc3deba304bd7dbfe87a814534b490dd1c48.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/axel/Desktop/STI/STIcolval/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cd4063e6a706f12034c45a8512fe8d8e5f5ab7f3">
-        <dex dex="/home/axel/Desktop/STI/STIcolval/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_8b6d35418e4d2fce69d242c4bbf3a2a06a59b676.jar" />
+        revision="25.0.3"
+        sha1="afe8eb4906b94df000e2b3714c864ec42d4e4ea6">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_890e5705dd9a2cbcd4817905075133f4be7b31f7.jar" />
     </item>
 
 </items>

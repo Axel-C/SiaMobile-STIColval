@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {RedditService} from '../../app/services/reddit.service';
+import {TicketsService} from '../../app/services/tickets.service';
 import {DetailsPage } from '../details/details'
 /*
   Generated class for the Ticket page.
@@ -13,9 +13,9 @@ import {DetailsPage } from '../details/details'
   templateUrl: 'ticket.html'
 })
 export class TicketPage {
-  items : any ;
+  tickets : any ;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , private redditService:RedditService) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams , private ticketsService:TicketsService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketPage');
@@ -25,31 +25,33 @@ export class TicketPage {
     console.log('Begin async operation', refresher);
     
     setTimeout(() => {
-      this.getPosts('worldnews' , 50);
+      this.getPosts(20 , 0);
       console.log('Async operation has ended');
       refresher.complete();
     }, 2000);
  }
 
  ngOnInit(){
-    this.getPosts('worldnews' , 5 );
+    this.getPosts( 20 , 0);
     
   }
 
-  getPosts(category , limit){
-   this.redditService.getPosts(category, limit).subscribe(response => {
-      this.items = response.data.children;
-      console.log("Reponse : " + response)
+  getPosts( limit , offset){
+   this.ticketsService.getAsignatePost(  limit , offset).subscribe(response => {
+      this.tickets = response;
+      console.log(response)
       if(response.err)
       alert(response.err);
     });
   }
 
 
-  viewItem(item){
+  viewItem(ticket){
     this.navCtrl.push(DetailsPage, {
-      item:item
+      ticket:ticket
     });
   }
+
+  
 
 }

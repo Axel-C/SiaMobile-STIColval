@@ -13,24 +13,24 @@
             <ion-card-title>
                 {{ticket.name}}
             </ion-card-title>
-                    {{ticket.content}}
+                     <pre style="font-family : Arial, Helvetica, sans-serif">{{ticket.content}}</pre>
            <ion-list>
                <ion-item>
                    <ion-icon name="person" item-left></ion-icon>
                    Autheur
                    <ion-note item-right>
-                       {{ticket.author}}
+                       {{ticket.recipient}}
                    </ion-note>
                </ion-item>
-
-               <ion-item>
+               
+               <ion-item *ngIf="showLocation">
                    <ion-icon name="pin" item-left></ion-icon>
                    Lieu
                    <ion-note item-right>
                         {{ticket.location}}   
                    </ion-note>
                </ion-item>
-
+               
                
 
                <ion-item>
@@ -58,10 +58,12 @@
                </ion-item>
 
            </ion-list>
-            <a ion-button block target="_blank" href="#"  color="blouge"> Je prends</a>
-            <a ion-button block target="_blank" href="#"  color="blouge"> Je commence</a>
-             <a ion-button block target="_blank" href="#"  color="blouge"> J'assigne à</a>
-            <a ion-button block target="_blank" href="#"  color="blouge"> J'ai terminé</a>
+           {{ticket.resolvers}}
+            
+            <a ion-button *ngIf="showButtonTake" block target="_blank" (click)="assignToMe()" color="blouge"> Je prends</a>
+            <a ion-button block target="_blank"  color="blouge"> Je commence</a>
+             <a ion-button block target="_blank"  color="blouge"> J'assigne à</a>
+            <a ion-button block target="_blank" (click)="close(ticket.id)"  color="blouge"> J'ai terminé</a>
            
 
         </ion-card-content>

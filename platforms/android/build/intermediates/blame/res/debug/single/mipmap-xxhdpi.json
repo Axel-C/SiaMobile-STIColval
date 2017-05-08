@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/res/merged/debug/mipmap-xxhdpi/icon.png",
+        "source": "/Users/axelcoeuret/Desktop/STIColval/platforms/android/res/mipmap-xxhdpi/icon.png"
+    },
+    {
         "merged": "/home/axel/Desktop/STI/STIcolval/platforms/android/build/intermediates/res/merged/debug/mipmap-xxhdpi/icon.png",
         "source": "/home/axel/Desktop/STI/STIcolval/platforms/android/res/mipmap-xxhdpi/icon.png"
     }

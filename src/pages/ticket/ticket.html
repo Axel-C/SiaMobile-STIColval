@@ -18,15 +18,15 @@
 
 
 
-<ion-card *ngFor="let item of items" (click)="viewItem(item.data)" style="padding: 6px ; " >
+<ion-card *ngFor="let ticket of tickets" (click)="viewItem(ticket)" style="padding: 6px ; " >
     <ion-card-header style="white-space : normal">
-      <h2 style="margin-left: -16px"><strong>{{item.data.title}}</strong> </h2>
+      <h2 style="margin-left: -16px"><strong>{{ticket.name}}</strong> </h2>
 
     </ion-card-header><p style="    text-overflow: ellipsis;
    max-height: 100px;
     overflow: hidden;
     white-space: normal;">
-    {{item.data.selftext.substring(0 , 200) + '...'}}
+    {{ticket.content}}
     </p>
     <ion-row>
     <ion-col>

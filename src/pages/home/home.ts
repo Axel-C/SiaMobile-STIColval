@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AddPage } from '../add/add';
-import {RedditService} from '../../app/services/reddit.service';
+import {TicketsService} from '../../app/services/tickets.service';
 import {DetailsPage } from '../details/details'
 import { NavController } from 'ionic-angular';
 
@@ -11,17 +11,26 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
   addPage = AddPage ;
-  items : any ; 
+  tickets : any ; 
   
 
  doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
     
-    setTimeout(() => {
-      this.getPosts('nosleep' , 10);
-      console.log('Async operation has ended');
+    this.ticketsService.getMyTickets(10 , 0).subscribe(response => {
+      this.tickets = response ;
       refresher.complete();
-    }, 2000);
+    })
+ }
+
+
+ngDoCheck(){
+    
+}
+
+
+
+ refresh(){
+    this.getPosts( 10);
  }
 
  goToAddPage() {
@@ -32,18 +41,18 @@ export class HomePage {
 
 
 
-  constructor(public navCtrl: NavController , private redditService:RedditService) {
+  constructor(public navCtrl: NavController , private ticketsService:TicketsService) {
     
   }
 
   ngOnInit(){
-    this.getPosts('nosleep' , 5 );
+    this.getPosts(10);
     
   }
 
-  getPosts(category , limit){
-   this.redditService.getPosts(category, limit).subscribe(response => {
-      this.items = response.data.children;
+  getPosts( limit){
+   this.ticketsService.getMyTickets( limit , 0).subscribe(response => {
+      this.tickets = response;
       
       
       if(response.err)
@@ -52,9 +61,9 @@ export class HomePage {
   }
 
 
-  viewItem(item){
+  viewItem(ticket){
     this.navCtrl.push(DetailsPage, {
-      item:item
+      ticket:ticket 
     });
   }
 

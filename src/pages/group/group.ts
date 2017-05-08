@@ -28,8 +28,7 @@ ngOnInit() {
     console.log('Begin async operation', refresher);
     
     setTimeout(() => {
-      // this.getPosts('nosleep' , 10);
-      console.log('Async operation has ended');
+      
       refresher.complete();
     }, 2000);
  }
@@ -40,7 +39,7 @@ ngOnInit() {
 
   getTickets(limit , offset){
     console.log('Récupération des tickets');
-    this.ticketsService.getMyTickets(limit , offset).subscribe(response => {
+    this.ticketsService.getGroupeTickets(null  , limit , offset).subscribe(response => {
       this.tickets = response ;
       console.log(response);
       console.log(this.tickets);
