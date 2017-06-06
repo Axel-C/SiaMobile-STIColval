@@ -14,14 +14,34 @@ export class TicketsService{
     constructor(http:Http , public loginService:LoginService){
         this.http = http;
         
-        this.baseUrl = 'http://siaapi.azurewebsites.net/api';
+        this.baseUrl = 'https://siaapi.azurewebsites.net/api';
     }
 
-    public getMyTickets( limit , offset){
+    public getMyTickets( limit , offset , closed){
         if (offset == 0){
             offset = 2000000
         }
-        return this.http.get(this.baseUrl+'/Tickets/'+ this.loginService.login + '/created?limit=' + limit  + '&max_id=' + offset)
+        var str = "" ;
+        if(closed){
+            str = "&closed=true&solved=false&open=false" ;
+        }else{
+            str = "&solved=true";
+        }
+        return this.http.get(this.baseUrl+'/Tickets/'+ this.loginService.login + '/created?limit=' + limit  + '&max_id=' + offset + str)
+            .map(res => res.json());
+
+    }
+
+
+    public getWatchedTickets( limit , offset , closed){
+        if (offset == 0){
+            offset = 2000000
+        }
+        var str = "" ;
+        if(closed){
+            str = "&closed=true&solved=false&open=false" ;
+        }
+        return this.http.get(this.baseUrl+'/Tickets/'+ this.loginService.login + '/watchedbyuser?limit=' + limit  + '&max_id=' + offset + str)
             .map(res => res.json());
 
     }
@@ -70,6 +90,37 @@ export class TicketsService{
   assign(ticketid , login){
       let headers = new Headers({'Content-Type':'application/json'});
       return this.http.put(this.baseUrl + "/tickets/" + ticketid + "/assign?user_id="+ login , "" , {hearders : headers})
+  }
+
+  UnAssign(ticketid , login){
+      let headers = new Headers({'Content-Type':'application/json'});
+      return this.http.put(this.baseUrl + "/tickets/" + ticketid + "/unassign?user_id="+ login , "" , {hearders : headers})
+  }
+
+  observ(ticketid){
+      let headers = new Headers({'Content-Type':'application/json'});
+      return this.http.put(this.baseUrl + "/tickets/" + ticketid + "/watch?user_id="+ this.loginService.login , "" , {hearders : headers})
+  }
+
+   unobserv(ticketid){
+      let headers = new Headers({'Content-Type':'application/json'});
+      return this.http.put(this.baseUrl + "/tickets/" + ticketid + "/unwatch?user_id="+ this.loginService.login , "" , {hearders : headers})
+  }
+
+  getFollowUp(ticketId){
+       return this.http.get(this.baseUrl+'/Tickets/'+ ticketId + "/getfollowup" )
+            .map(res => res.json());
+  }
+
+  postFollowUp( followUp){
+      let headers = new Headers({'Content-Type':'application/json'});
+      return this.http
+             .put(this.baseUrl + "/tickets/addfollowup" , JSON.stringify(followUp), {headers: headers})
+  }
+
+  getDetails(ticketid){
+        return this.http.get(this.baseUrl+'/Tickets/'+ ticketid )
+            .map(res => res.json());
   }
 
      

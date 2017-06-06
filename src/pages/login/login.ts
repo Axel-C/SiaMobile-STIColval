@@ -28,6 +28,7 @@ password ;
     });   
     loader.present();
     this.loginService.getSiaId(this.id).subscribe(response => {
+      this.loginService.name = response.firstname + " " + response.realname ;
       
       this.loginService.login = response.id ;
      this.loginService.password = this.password ; 
@@ -35,7 +36,7 @@ password ;
      loader.dismiss();
     } ,
     err => {
-      alert("Erreur : Impossible de se connecter \n Veuillez réessayer plus tard ")
+      alert("Erreur : Impossible de se connecter \n Veuillez réessayer plus tard :) ")
       loader.dismiss();
     }
     );

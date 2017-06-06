@@ -17,7 +17,7 @@
            <ion-list>
                <ion-item>
                    <ion-icon name="person" item-left></ion-icon>
-                   Autheur
+                   Auteur
                    <ion-note item-right>
                        {{ticket.recipient}}
                    </ion-note>
@@ -50,7 +50,7 @@
                </ion-item>
 
                <ion-item>
-                   <ion-icon name="paper" item-left></ion-icon>
+                   <ion-icon name="flag" item-left></ion-icon>
                    État : 
                    <ion-note item-right>
                        {{ticket.status_text}}
@@ -60,12 +60,38 @@
            </ion-list>
            {{ticket.resolvers}}
             
-            <a ion-button *ngIf="showButtonTake" block target="_blank" (click)="assignToMe()" color="blouge"> Je prends</a>
-            <a ion-button block target="_blank"  color="blouge"> Je commence</a>
-             <a ion-button block target="_blank"  color="blouge"> J'assigne à</a>
-            <a ion-button block target="_blank" (click)="close(ticket.id)"  color="blouge"> J'ai terminé</a>
+            
+            <a ion-button *ngIf="showButtonTake" block target="_blank" (click)="assignToMe()" color="blouge"> Prendre</a>
+            <a ion-button *ngIf="showButtonTake"  block (click)="goToPeople()" color="blouge"> Attribuer à</a>
+            <a ion-button *ngIf="!showButtonTake" block target="_blank" (click)="unassign()" color="blouge"> Ne plus prendre</a>
+            <a ion-button *ngIf="showButtonPause" block target="_blank" (click)="pause()" color="blouge"> Mettre en attente</a>
+            <a ion-button *ngIf="showButtonUnPause" block target="_blank" (click)="unPause()" color="blouge"> Reprendre </a>
+            <a ion-button block *ngIf="showButtonObserv" target="_blank" (click)="observer()" color="blouge"> Observer</a>
+            <a ion-button block *ngIf="!showButtonObserv" target="_blank" (click)="nePlusObserver()" color="blouge"> Ne plus observer</a>
+             <!--<a ion-button block target="_blank"  color="blouge"> J'assigne à</a>-->
+            <a ion-button block target="_blank" *ngIf="showButtonDone" (click)="close(ticket.id)"  color="blouge"> Terminer</a>
+            <a ion-button block *ngIf="showButtonValidate" target="_blank" (click)="validate()"  color="blouge"> Je suis satisfait</a>
            
 
         </ion-card-content>
+
     </ion-card>
+
+    <ion-card *ngFor="let followUp of followUps">
+        <ion-card-header>{{followUp.user}}</ion-card-header>
+        <ion-card-content>{{followUp.content}}</ion-card-content>
+        <ion-item>
+                   <ion-note item-right>
+                       {{followUp.date}}
+                   </ion-note>
+               </ion-item>
+    </ion-card>
+
+    <ion-card color="light">
+        <ion-card-header >Répondre</ion-card-header>
+        <ion-card-content><textarea  [(ngModel)] = "textarea" style="width : 100% ; height : 100px ;" > </textarea> </ion-card-content>
+        <a ion-button block target="_blank"  color="blouge" (click)="reply()"><ion-icon name="undo" item-left></ion-icon>    Envoyer</a>
+    </ion-card>
+
+
 </ion-content>

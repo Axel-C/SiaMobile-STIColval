@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { HomePage } from '../home/home';
-import { OptionPage } from '../option/option';
+import { WatchPage } from '../watch/watch';
 import { TicketPage} from '../ticket/ticket';
 import { GroupPage} from '../group/group';
 
@@ -15,7 +15,7 @@ export class TabsPage {
   tab1Root: any = HomePage;
   tab2Root: any = TicketPage;
   tab3Root: any = GroupPage;
-  tab4Root: any = OptionPage;
+  tab4Root: any = WatchPage;
 
   constructor() {
 

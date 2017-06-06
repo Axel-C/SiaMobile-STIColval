@@ -11,6 +11,8 @@ export class LoginService{
     baseUrl: String;
     login : String ;
     password : String ;
+    name : String ;
+    siaId : any ;
 
     constructor(http:Http){
         this.http = http ;
@@ -31,5 +33,8 @@ export class LoginService{
         console.log(this.login + "" + this.password);
     }
 
+    getPeoples(){
+        return this.http.get(this.baseUrl + "/users/assignableToticket" ).map(res => res.json());;
+    }
      
 }

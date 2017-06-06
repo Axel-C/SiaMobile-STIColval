@@ -37,6 +37,15 @@
     </ion-select>
   </ion-item>
 
+
+<ion-item>
+    <ion-label>Batiment</ion-label>
+    <ion-select  #build  (ngModelChange)="listLocation($event)" name="Batiment" [(ngModel)] = "ChoosedBuilding">
+      
+      <ion-option  *ngFor="let building of buildings" value="{{building.id}}">{{building.displayname}}</ion-option>
+      
+    </ion-select>
+  </ion-item>
  
 
 
@@ -55,10 +64,12 @@
   </ion-item>
 
   <ion-item>
-    <ion-label floating >Description</ion-label>
-    <ion-input type="text" value="" [(ngModel)] = "content"></ion-input>
+    <ion-label >Description</ion-label>
+    
+    
   </ion-item>
 </ion-list>
+<textarea  [(ngModel)] = "content" style="width : 100% ; height : 100px ;" color="light"> </textarea>
 
  <button ion-button full large color="blouge" (click)="submit()" >Soumettre la demande</button>
 

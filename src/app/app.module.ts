@@ -9,10 +9,13 @@ import { TicketPage } from '../pages/ticket/ticket';
 import { OptionPage } from '../pages/option/option';
 import { DetailsPage } from '../pages/details/details';
 import { GroupPage } from '../pages/group/group';
+import { WatchPage } from '../pages/watch/watch';
+import { PeoplePage } from '../pages/people/people';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Liste } from "./compoment/liste/liste";
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DetailsPage ,
     TicketPage ,
     GroupPage ,
+    WatchPage ,
+    Liste ,
+    PeoplePage ,
     Login
   ],
   imports: [
@@ -39,6 +45,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DetailsPage ,
     TicketPage ,
     GroupPage ,
+    WatchPage ,
+    Liste ,
+    PeoplePage ,
     Login
   ],
   providers: [
