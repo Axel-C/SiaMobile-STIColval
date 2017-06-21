@@ -109,14 +109,14 @@ export class DetailsPage {
 
     observer(){
         this.ticketsService.observ(this.ticket.id).subscribe(response => {
-            this.toast('Vous observer maintenant le ticket');
+            this.toast('Vous observez maintenant le ticket');
             this.getDetails();
         })
     }
 
     nePlusObserver(){
         this.ticketsService.unobserv(this.ticket.id).subscribe(response => {
-            this.toast('Vous n\' observer plus le ticket');
+            this.toast('Vous n\' observez plus le ticket');
             this.getDetails();
         })
     }

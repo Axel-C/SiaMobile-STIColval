@@ -46,5 +46,29 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-ms-adal": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-ms-adal@0.10.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-sqlite-storage": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-sqlite-storage"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

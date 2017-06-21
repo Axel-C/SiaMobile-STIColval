@@ -32,6 +32,66 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "id": "cordova-plugin-ms-adal.utility",
+        "file": "plugins/cordova-plugin-ms-adal/www/utility.js",
+        "pluginId": "cordova-plugin-ms-adal",
+        "runs": true
+    },
+    {
+        "id": "cordova-plugin-ms-adal.AuthenticationContext",
+        "file": "plugins/cordova-plugin-ms-adal/www/AuthenticationContext.js",
+        "pluginId": "cordova-plugin-ms-adal",
+        "clobbers": [
+            "Microsoft.ADAL.AuthenticationContext"
+        ]
+    },
+    {
+        "id": "cordova-plugin-ms-adal.CordovaBridge",
+        "file": "plugins/cordova-plugin-ms-adal/www/CordovaBridge.js",
+        "pluginId": "cordova-plugin-ms-adal"
+    },
+    {
+        "id": "cordova-plugin-ms-adal.AuthenticationResult",
+        "file": "plugins/cordova-plugin-ms-adal/www/AuthenticationResult.js",
+        "pluginId": "cordova-plugin-ms-adal"
+    },
+    {
+        "id": "cordova-plugin-ms-adal.TokenCache",
+        "file": "plugins/cordova-plugin-ms-adal/www/TokenCache.js",
+        "pluginId": "cordova-plugin-ms-adal"
+    },
+    {
+        "id": "cordova-plugin-ms-adal.TokenCacheItem",
+        "file": "plugins/cordova-plugin-ms-adal/www/TokenCacheItem.js",
+        "pluginId": "cordova-plugin-ms-adal"
+    },
+    {
+        "id": "cordova-plugin-ms-adal.UserInfo",
+        "file": "plugins/cordova-plugin-ms-adal/www/UserInfo.js",
+        "pluginId": "cordova-plugin-ms-adal"
+    },
+    {
+        "id": "cordova-plugin-ms-adal.LogItem",
+        "file": "plugins/cordova-plugin-ms-adal/www/LogItem.js",
+        "pluginId": "cordova-plugin-ms-adal"
+    },
+    {
+        "id": "cordova-plugin-ms-adal.AuthenticationSettings",
+        "file": "plugins/cordova-plugin-ms-adal/www/AuthenticationSettings.js",
+        "pluginId": "cordova-plugin-ms-adal",
+        "clobbers": [
+            "Microsoft.ADAL.AuthenticationSettings"
+        ]
+    },
+    {
+        "id": "cordova-sqlite-storage.SQLitePlugin",
+        "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+        "pluginId": "cordova-sqlite-storage",
+        "clobbers": [
+            "SQLitePlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -42,7 +102,10 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.2",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
-    "ionic-plugin-keyboard": "2.2.1"
+    "ionic-plugin-keyboard": "2.2.1",
+    "cordova-plugin-compat": "1.1.0",
+    "cordova-plugin-ms-adal": "0.10.0",
+    "cordova-sqlite-storage": "2.0.4"
 };
 // BOTTOM OF METADATA
 });

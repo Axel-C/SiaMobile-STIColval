@@ -1,6 +1,12 @@
 <ion-header>
   <ion-navbar style="text-align: center" color="light">
-      <img alt="Company Logo2" style="text-align : center"  height="40" src="assets/images/topLogo.png">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="trier()">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+
+      <img alt="Company Logo2"   style="text-align : center ; margin-left : 34px "  height="40" src="assets/images/topLogo.png">
     <ion-title>
      
     </ion-title>
@@ -12,38 +18,37 @@
 <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  
+  <ion-list-header *ngIf="filtreActif" color="light">
+    <span style="display : inline ; font-weight : bold " color="blouge"><ion-icon name="funnel"></ion-icon> FILTRE ACTIF </span>
+    <span style="display : inline  ;
+     text-align : left ;
+      right : 10px ;
+       position : absolute ;
+        font-weight : bold ;
+        text-decoration : underline ;" (click)="reinitialiser()" color="orange" >REINITIALISER</span>
+  </ion-list-header>
 	
 
+  
 
-
-
-<ion-card *ngFor="let ticket of tickets" (click)="viewItem(ticket)" style="padding: 6px ; " >
+<ion-card *ngFor="let ticket of tickets" (click)="viewItem(ticket)" style="padding: 6px ;  " >
     <ion-card-header style="white-space : normal">
-      <h2 style="margin-left: -16px"><strong>{{ticket.name}}</strong> </h2>
+      <h2 style="margin-left: -16px"><strong>{{ticket.name}}</strong> 
+      <span style="text-align: right ; font-size : 12px ; background-color : rgb(91.8%, 90.6%, 89.4%)" color="orange"> {{ticket.status_text}} </span> </h2>
 
-    </ion-card-header><p style="    text-overflow: ellipsis;
+    </ion-card-header>
+    
+   <p style="  text-overflow: ellipsis;
    max-height: 100px;
     overflow: hidden;
-    white-space: normal;">
-    {{ticket.content}}
-    </p>
-    <ion-row>
-    <ion-col>
-      <button ion-button icon-left clear small color="orange"  >
-        <ion-icon name="md-checkmark-circle"></ion-icon>
-        <div> Terminé </div>
-      </button >
-    </ion-col>
+    white-space: normal;"> {{ticket.content}}</p>
     
-    
-  </ion-row>
+  <span style="color: grey " >envoyé par {{ticket.recipient}} le {{ticket.date_text}}  à {{ticket.hour}}:{{ticket.minute}}</span>
 </ion-card>
 
- <!--<ion-fab right bottom>
-    <button ion-fab [navPush]="addPage" ><ion-icon name="add" ></ion-icon></button>
-  </ion-fab>-->
-
+<ion-infinite-scroll *ngIf="showedClosedTicket" (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
 
 
 </ion-content>

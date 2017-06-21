@@ -10,5 +10,86 @@
         sha1="afe8eb4906b94df000e2b3714c864ec42d4e4ea6">
         <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_890e5705dd9a2cbcd4817905075133f4be7b31f7.jar" />
     </item>
+    <item
+        is-multidex="false"
+        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_00b6b145e407f588d81ce9b399942622e5cb2119.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_44a40fe8f21c8f9bff38c42a6c8aa616e99f6259.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/exploded-aar/com.microsoft.aad/adal/1.10.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e629f0a05396426cc89ca4ad0e04509faca60b5b">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/com.microsoft.aad-adal-1.10.0_faebc70af0a012814f6fe0b31bbea44263c87d59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/libs/sqlite-connector.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="76169ab23a4f939925491c6fe186749da5a56ee9">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/sqlite-connector_0807186e2eadc1f48b4121adcd347c00bb3d206d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_116391c63f4df132ce8ddaa824a2ec7e4cd3ba58.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/axelcoeuret/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_e127f7ec78d80664a446127e751c80f8d122a97a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_721e17c0e949aab535dcedce153bcedc585a0bc7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/axelcoeuret/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/gson-2.2.4_8c0b099896b5982fb82a81da8d47dba8e9ecf40c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_09cb2d9396f761f5e7fe02b937638e4289d255c3.jar" />
+    </item>
 
 </items>

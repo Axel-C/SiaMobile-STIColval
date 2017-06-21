@@ -24,7 +24,17 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.sticolval150650"
+        },
+        "cordova-plugin-ms-adal": {
+            "PACKAGE_NAME": "com.ionicframework.sticolval150650"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.ionicframework.sticolval150650"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.sticolval150650"
+        }
+    }
 }

@@ -52,7 +52,6 @@ reinitialiser(){
  }
 
  goToAddPage() {
-   console.log('test');
     this.navCtrl.push('addPage');
   }
  
@@ -310,7 +309,7 @@ trier() {
 
   trierParStatue(){
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Choisissez un status :',
+      title: 'Choisissez un statut :',
       buttons: [
         {
           text: 'Annuler',
@@ -432,9 +431,12 @@ trier() {
         this.offset = 10 ;
       }
       this.nbClosed = 10 ;
+      this.parcourir();
       if(response.err)
       alert(response.err);
     });
   }
+
+  
 
 }

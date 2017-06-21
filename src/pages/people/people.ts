@@ -52,7 +52,7 @@ export class PeoplePage {
       this.makeList()
     }
     )}else{
-      this.makeList();
+       this.makeList();
     }
   }
 

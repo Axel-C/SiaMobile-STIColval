@@ -19,13 +19,14 @@ export class WatchPage {
   filtreActif :boolean = false ;
   ticketsCopy : any ;
   login = Login ;
+  showedClosedTicket : boolean = false ;
   
 
  doRefresh(refresher) {
     
     this.ticketsService.getWatchedTickets(200 , 0 , false).subscribe(response => {
       this.tickets = response ;
-      
+      this.parcourir();
       refresher.complete();
     })
  }
@@ -37,13 +38,16 @@ ngDoCheck(){
 
 reinitialiser(){
   this.tickets = this.ticketsCopy ;
+  this.showedClosedTicket = false ;
   this.filtreActif = false ;
   this.offset = 0 ;
 }
 
 
  refresh(){
+   this.showedClosedTicket = false  ;
     this.getPosts( 50);
+
    // this.getClosedPost(this.nbClosed)
  }
 
@@ -72,7 +76,7 @@ reinitialiser(){
    this.ticketsService.getWatchedTickets( limit , 0 , false).subscribe(response => {
       this.tickets = response;
       this.ticketsCopy = response ;
-      
+      this.parcourir();
       if(response.err)
       alert(response.err);
     });
@@ -100,7 +104,7 @@ reinitialiser(){
   }
 
 doInfinite(infiniteScroll){
-  this.ticketsService.getMyTickets( 10 , this.offset , true).subscribe(response => {
+  this.ticketsService.getWatchedTickets( 10 , this.offset , true).subscribe(response => {
       this.closedTickets = this.closedTickets.concat(response) ;
       this.offset = this.closedTickets[this.closedTickets.length - 1].id - 1
       this.nbClosed += 10 ;
@@ -110,6 +114,16 @@ doInfinite(infiniteScroll){
     });
   
   
+}
+
+parcourir(){
+  var statusTab = ['Inconnu' , 'Nouveau' , 'En cours (Attribué)' , 'En cours (Planifié)' , 'En attente' , 'Résolu' , 'Clos'] ;
+  for(var i = 0 ; i < this.tickets.length ; i++ ){
+    this.tickets[i].status_text = statusTab[this.tickets[i].status];
+    this.tickets[i].date_text = new Date(this.tickets[i].date).toLocaleDateString();
+    this.tickets[i].hour = new Date(this.tickets[i].date).getHours();
+    this.tickets[i].minute = new Date(this.tickets[i].date).getMinutes();
+  }
 }
 
 trier() {
@@ -161,6 +175,12 @@ trier() {
           icon: !this.platform.is('ios') ? 'flag' : null,
           handler: () => {
             this.trierParStatue();
+          }
+        },{
+          text: 'Aide',
+          icon: !this.platform.is('ios') ? 'help' : null,
+          handler: () => {
+            this.app.getRootNav().setRoot(Login);
           }
         },{
           text: 'Se déconnecter',
@@ -290,7 +310,7 @@ trier() {
 
   trierParStatue(){
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Choisissez un status :',
+      title: 'Choisissez un statut :',
       buttons: [
         {
           text: 'Annuler',
@@ -363,6 +383,7 @@ trier() {
           text: 'Clos',
           icon: !this.platform.is('ios') ? 'close-circle' : null,
           handler: () => {
+            this.showedClosedTicket = true ;
             this.showClosedTicket();
           }
         })
@@ -402,7 +423,7 @@ trier() {
   }
 
   showClosedTicket(){
-    this.ticketsService.getMyTickets( 10 , this.offset , true).subscribe(response => {
+    this.ticketsService.getWatchedTickets( 10 , this.offset , true).subscribe(response => {
       this.tickets = response ;
       if(this.tickets.length > 0){
         this.offset = this.tickets[this.tickets.length - 1].id - 1 ;
@@ -411,9 +432,12 @@ trier() {
         this.offset = 10 ;
       }
       this.nbClosed = 10 ;
+      this.parcourir();
       if(response.err)
       alert(response.err);
     });
   }
+
+  
 
 }

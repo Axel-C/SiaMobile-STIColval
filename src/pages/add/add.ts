@@ -46,6 +46,7 @@ export class AddPage {
 
   getCateg(){
     this.categoryService.getCategories().subscribe(response => {
+      // on stocke le contenu de la réponse à la requeête dans un tableau de la classe.
       this.categories = response ;
     }
     

@@ -11,6 +11,7 @@ import { DetailsPage } from '../pages/details/details';
 import { GroupPage } from '../pages/group/group';
 import { WatchPage } from '../pages/watch/watch';
 import { PeoplePage } from '../pages/people/people';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -33,7 +34,8 @@ import { Liste } from "./compoment/liste/liste";
     Login
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp), 
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
