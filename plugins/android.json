@@ -27,6 +27,9 @@
         },
         "cordova-plugin-ms-adal": {
             "PACKAGE_NAME": "com.ionicframework.sticolval150650"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.sticolval150650"
         }
     },
     "dependent_plugins": {

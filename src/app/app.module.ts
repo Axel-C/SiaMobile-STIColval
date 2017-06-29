@@ -14,6 +14,7 @@ import { PeoplePage } from '../pages/people/people';
 import { IonicStorageModule } from '@ionic/storage';
 
 
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Liste } from "./compoment/liste/liste";
@@ -55,6 +56,7 @@ import { Liste } from "./compoment/liste/liste";
   providers: [
     StatusBar,
     SplashScreen,
+    
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

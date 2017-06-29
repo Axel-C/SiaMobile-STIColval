@@ -7,7 +7,8 @@ import { Login } from "../login/login";
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html' 
+ 
   
 })
 export class HomePage {
@@ -59,11 +60,16 @@ reinitialiser(){
 
 
   constructor(public navCtrl: NavController , private ticketsService:TicketsService , 
-  private events : Events , public actionSheetCtrl: ActionSheetController , public platform : Platform , private app : App) {
+  private events : Events , public actionSheetCtrl: ActionSheetController , public platform : Platform , private app : App ) {
+    
+    
+
     this.events.subscribe('reloadPage',() => {
         this.refresh();
 });
   }
+
+  
 
   ngOnInit(){
     this.getPosts(200);
@@ -179,7 +185,7 @@ trier() {
           text: 'Aide',
           icon: !this.platform.is('ios') ? 'help' : null,
           handler: () => {
-            this.app.getRootNav().setRoot(Login);
+            
           }
         },{
           text: 'Se déconnecter',
@@ -436,6 +442,9 @@ trier() {
       alert(response.err);
     });
   }
+
+
+   
 
   
 
