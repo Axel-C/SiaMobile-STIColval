@@ -39,12 +39,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/libs/sqlite-connector.jar"
+        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="76169ab23a4f939925491c6fe186749da5a56ee9">
-        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/sqlite-connector_0807186e2eadc1f48b4121adcd347c00bb3d206d.jar" />
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_09cb2d9396f761f5e7fe02b937638e4289d255c3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -81,15 +81,6 @@
         revision="25.0.3"
         sha1="a60a5e993c98c864010053cb901b7eab25306568">
         <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/gson-2.2.4_8c0b099896b5982fb82a81da8d47dba8e9ecf40c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/axelcoeuret/Desktop/STIColval/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_09cb2d9396f761f5e7fe02b937638e4289d255c3.jar" />
     </item>
 
 </items>

@@ -23,7 +23,13 @@ password ;
   constructor(public navCtrl: NavController , public alertCtrl: AlertController  , private loginService:LoginService , public loadingController: LoadingController
   , platform: Platform) {
     platform.ready().then(() => {
-      this.loginService.authentificate().then((res) => {
+    this.authentificate();
+    console.log(this.loginService.azureToken);
+    })
+    
+  }
+  authentificate(){
+    this.loginService.authentificate().then((res) => {
           // stockage du jeton dans une variable de la classe
           this.loginService.azureToken = res.accessToken ;
           // stockage du jeton dans une base de donnée interne à l'application
@@ -33,16 +39,10 @@ password ;
           this.login();
           
         } , (err) => {
-            // affichage de l'erreur dans la console javascript (debug)
-            alert("Une erreur s'est produite lors de l'authentification")
-          console.log(err);
+            this.authentificate();
+            
         });
-        ;;
-    console.log(this.loginService.azureToken);
-    })
-    
   }
-
   
  login(){
    let loader = this.loadingController.create({
